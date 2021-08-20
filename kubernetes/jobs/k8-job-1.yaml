@@ -1,0 +1,13 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: k8-job-1
+spec:
+  completions: 9
+  parallelism: 2
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        -  name: nginx
+           image: nginx

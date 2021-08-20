@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: k8-pod-4
+  labels:
+    env: sandbox
+spec:
+  containers:
+    - name: nginx-4
+      image: nginx

@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: k8-ingress-1
+spec:
+  rules:
+    - http:
+        paths:
+          - backend:
+              service:
+                name: food-service
+                port:
+                  number: 8080
+            path: /food
+            pathType: Prefix
+    - http:
+        paths:
+          - backend:
+               service:
+                 name: pay-service
+                 port:
+                   number: 8080
+            path: /pay
+            pathType: Prefix

@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: k8-ingress-1-beta
+spec:
+  rules:
+    - http:
+        paths:
+          - backend:
+              serviceName: food-servie
+              servicePort: 8080
+            path: /food
+    - http:
+        paths:
+          - backend:
+              serviceName: pay-servie
+              servicePort: 8080
+            path: /pay

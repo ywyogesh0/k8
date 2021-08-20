@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: k8-pod-2
+  namespace: test
+  labels:
+    app: pod
+    env: local
+spec:
+  containers:
+    - name: nginx-2
+      image: nginx

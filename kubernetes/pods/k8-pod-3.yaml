@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: k8-pod-3
+  labels:
+    env: local
+spec:
+  containers:
+    - name: nginx-3
+      image: nginx

@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: k8-cj-1
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      completions: 2
+      parallelism: 2
+      template:
+        spec:
+          restartPolicy: Never
+          containers:
+            -  name: nginx
+               image: nginx
