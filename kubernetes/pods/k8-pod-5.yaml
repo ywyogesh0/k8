@@ -23,3 +23,5 @@ spec:
     - name: k8-pod-5-volume-3
       persistentVolumeClaim:
         claimName: k8-pvc-1
+    - name: empty-volume
+      emptyDir: {}

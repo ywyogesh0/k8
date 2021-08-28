@@ -7,6 +7,19 @@ metadata:
     app: pod
     env: local
 spec:
+  securityContext:
+    runAsUser: 1001
+  serviceAccountName: k8-sa-1
   containers:
     -  name: nginx-1
        image: nginx
+       command:
+         - "sleep"
+       args:
+         - "500"
+       securityContext:
+         runAsUser: 1000
+         capabilities:
+           add:
+             - "MAC_ADMIN"
+       

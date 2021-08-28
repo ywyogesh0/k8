@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ResourceQuota
 metadata:
-  name: rc-dev
+  name: rq-dev-1
   namespace: dev
 spec:
   hard:
@@ -10,3 +10,7 @@ spec:
     requests.memory: 2Gi
     limits.cpu: "4"
     limits.memory: 4Gi
+    persistentvolumeclaims: "10"
+    resourcequotas: "1"
+    secrets: "5"
+    services: "3"

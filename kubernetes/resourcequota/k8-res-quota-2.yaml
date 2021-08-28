@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: rq-dev-2
+  namespace: dev
+spec:
+  hard:
+    pods: "1"
+  scopes:
+    - "BestEffort"

@@ -5,6 +5,20 @@ metadata:
   labels:
     env: local
 spec:
+  volumes:
+    - name: k8-vol-3
+      configMap:
+        name: k8-cm-1
+        defaultMode: 0755
   containers:
     - name: nginx-3
       image: nginx
+      env:
+        - name: maven
+          valueFrom:
+            configMapKeyRef:
+              key: MAVEN
+              name: k8-cm-1
+      envFrom:
+        - configMapRef:
+            name: k8-cm-1

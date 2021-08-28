@@ -13,14 +13,11 @@ spec:
                 port:
                   number: 8080
             path: /food
-            pathType: Prefix
-    - host: "new-food-order.com"
-      http:
-        paths:
+            pathType: Exact
           - backend:
               service:
                 name: pay-service
                 port:
                   number: 8080
             path: /pay
-            pathType: Prefix
+            pathType: Exact

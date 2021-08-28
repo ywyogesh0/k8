@@ -1,0 +1,11 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: k8-ingress-3
+spec:
+  defaultBackend:
+    service:
+      name: default-svc
+      port:
+        number: 80
+        name: http

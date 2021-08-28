@@ -4,7 +4,8 @@ metadata:
   name: k8-ingress-1
 spec:
   rules:
-    - http:
+    - host: "wear.new-food-order.com"
+      http:
         paths:
           - backend:
               service:
@@ -13,12 +14,13 @@ spec:
                   number: 8080
             path: /food
             pathType: Prefix
-    - http:
+    - host: "new-food-order.com"
+      http:
         paths:
           - backend:
-               service:
-                 name: pay-service
-                 port:
-                   number: 8080
+              service:
+                name: pay-service
+                port:
+                  number: 8080
             path: /pay
             pathType: Prefix

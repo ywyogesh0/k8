@@ -5,6 +5,10 @@ metadata:
   labels:
     env: local
 spec:
+  strategy:
+    rollingUpdate:
+      maxSurge: 10
+      maxUnavailable: 5
   selector:
     matchLabels:
       env: local

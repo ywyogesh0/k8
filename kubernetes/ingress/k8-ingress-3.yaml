@@ -1,0 +1,35 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: k8-ingress-3
+spec:
+  defaultBackend:
+    service:
+      name: defaultsvc
+      port:
+        name: http
+  rules:
+  - host: "foo.com"
+    http:
+      paths:
+      - backend:
+          service:
+            name: svc
+            port:
+              number: 8080
+        path: /
+        pathType: Prefix
+  - host: "new-food-order.com"
+    http:
+      paths:
+        - backend:
+            service:
+              name: pay-service
+              port:
+                number: 8080
+          path: /pay
+          pathType: Prefix
+  tls:
+  - hosts:
+    - foo.com
+    secretName: secret1

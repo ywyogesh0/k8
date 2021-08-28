@@ -1,0 +1,8 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: k8-ingress-3
+spec:
+  backend:
+    serviceName: svc
+    servicePort: 80

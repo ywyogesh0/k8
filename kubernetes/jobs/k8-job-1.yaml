@@ -5,6 +5,8 @@ metadata:
 spec:
   completions: 9
   parallelism: 2
+  backoffLimit: 4
+  activeDeadlineSeconds: 100
   template:
     spec:
       restartPolicy: Never
